@@ -23,7 +23,7 @@ let
     url = "https://github.com/Genymobile/scrcpy/releases/download/v${version}/scrcpy-server-v${version}";
     hash = "sha256-k8Jyt0OGBcBV4Sf3REBk7Xj6nKSfgRVnd/0gHnnOe6M=";
   };
-  client_commit = "e76d582687d6d5cb8c31779db62ba292a90315e9";
+  client_commit = "877959982fa1bfcf50553a7436a942e0c84a7020";
 in
 stdenv.mkDerivation rec {
   pname = "scrcpy";
@@ -33,9 +33,8 @@ stdenv.mkDerivation rec {
     owner = "Genymobile";
     repo = "scrcpy";
     rev = client_commit;
-    # hash = "sha256-0Msc7W01pNnJXAAp+qXThQu2sIQvuVZZjR7Oxw3vQHI=";
-    hash = "sha256-auM+12lYYzZES4paB1rnqdL6FRcYZq1LG6ZbHDjddC8=";
-  };
+    hash = "sha256-tzDnmrCSh//KqfFLmmzaGi9k5Dg+pyIcBZE63yC3lPE=";
+    };
 
   #   display.c: When run without a hardware accelerator, this allows the command to continue working rather than failing unexpectedly.
   #   This can happen when running on non-NixOS because then scrcpy seems to have a hard time using the host OpenGL-supporting hardware.
