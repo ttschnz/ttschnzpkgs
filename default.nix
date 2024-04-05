@@ -7,12 +7,18 @@
 #     nix-build -A mypackage
 
 { pkgs ? import <nixpkgs> { } }:
-
+let
+  p = path: pkgs.callPackage path { };
+in
 {
   # The `lib`, `modules`, and `overlays` names are special
   lib = import ./lib { inherit pkgs; }; # functions
   modules = import ./modules; # NixOS modules
   overlays = import ./overlays; # nixpkgs overlays
 
-  scrcpy = pkgs.callPackage ./pkgs/scrcpy { };
+  scrcpy = p ./pkgs/scrcpy;
+  torctl = p ./pkgs/torctl;
+  xnviewmp = p ./pkgs/xnviewmp;
+  # wrapWine = p ./pkgs/wine;
+  # ms-office = p ./pkgs/wine/ms-office.nix;
 }
